@@ -1,0 +1,2 @@
+1、先覆盖web_common.py，然后重启监工刷新dashboard页面
+2、再覆盖web_common2.py（注意改回原名字，再覆盖），然后重启监工，搞定！
