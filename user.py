@@ -1,4 +1,4 @@
-﻿__author__ = 'powergx'
+__author__ = 'powergx'
 from flask import request, Response, render_template, session, url_for, redirect
 from crysadm import app, r_session
 from auth import requires_admin, requires_auth
@@ -171,6 +171,8 @@ def user_change_property(field, value):
         user_info['auto_giftbox'] = True if value == '1' else False
     if field == 'auto_searcht':
         user_info['auto_searcht'] = True if value == '1' else False
+    if field == 'auto_revenge':
+        user_info['auto_revenge'] = True if value == '1' else False
     if field == 'auto_getaward':
         user_info['auto_getaward'] = True if value == '1' else False
 
@@ -268,7 +270,7 @@ def user_register():
     r_session.srem('public_invitation_codes', invitation_code)
 
     user = dict(username=username, password=hash_password(password), id=str(uuid.uuid1()),
-                active=True, is_admin=False, max_account_no=5,
+                active=True, is_admin=False, max_account_no=20,
                 created_time=datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     r_session.set('%s:%s' % ('user', username), json.dumps(user))
     r_session.set('%s:%s' % ('record', username), json.dumps(dict(diary=[])))
