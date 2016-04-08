@@ -37,15 +37,15 @@ def old_login(username, md5_password):
     param = '{"cmdID":1,"isCompressed":0,"rsaKey":{"n":"D6F1CFBF4D9F70710527E1B1911635460B1FF9AB7C202' \
             '294D04A6F135A906E90E2398123C234340A3CEA0E5EFDCB4BCF7C613A5A52B96F59871D8AB9D240ABD4481CCFD758EC3F2FDD54A' \
             '1D4D56BFFD5C4A95810A8CA25E87FDC752EFA047DF4710C7D67CA025A2DC3EA59B09A9F2E3A41D4A7EFBB31C738B35FFAAA5C6F4' \
-            'E6F","e":"010001"},"businessType":67,"passWord":"%s","loginType":0,"platformVersion":1,' \
-            '"verifyKey":"","sessionID":"","protocolVersion":100,"userName":"%s","extensionList":"",' \
-            '"sequenceNo":10000002,"peerID":"%s","clientVersion":"1.0.0","appName":"ANDROID-com.xunlei.redcrystalandroid"}'
+            'E6F","e":"010001"},"businessType":61,"passWord":"%s","loginType":0,"platformVersion":1,' \
+            '"verifyKey":"","sessionID":"","protocolVersion":101,"userName":"%s","extensionList":"",' \
+            '"sequenceNo":10000015,"peerID":"%s","clientVersion":"1.0.0","appName":"ANDROID-com.xunlei.redcrystalandroid"}'
 
     hash_password = hex(pow_mod(StrToInt(md5_password), exponent, modulus))[2:].upper().zfill(256)
 
     _chars = "0123456789ABCDEF"
 
-    peer_id = "E564A24FF0838C30"
+    peer_id = ''.join(random.sample(_chars, 16))
 
     param = param % (hash_password, username, peer_id)
 
@@ -53,7 +53,6 @@ def old_login(username, md5_password):
     r = requests.post("https://login.mobile.reg2t.sandai.net/", data=param, headers=headers, verify=False)
 
     login_status = json.loads(r.text)
-
     return login_status
 
 def login(username, md5_password, encrypt_pwd_url=None):
