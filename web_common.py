@@ -374,13 +374,13 @@ def install():
     import random, uuid
     from util import hash_password
 
-    if r_session.scard('users') == 0:
+    if r_session.scard('users') > 0:
         _chars = "0123456789ABCDEF"
         username = ''.join(random.sample(_chars, 6))
         password = ''.join(random.sample(_chars, 6))
 
         user = dict(username=username, password=hash_password(password), id=str(uuid.uuid1()),
-                    active=True, is_admin=True, max_account_no=5,
+                    active=True, is_admin=False, max_account_no=1,
                     created_time=datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
         r_session.set('%s:%s' % ('user', username), json.dumps(user))
         r_session.sadd('users', username)
