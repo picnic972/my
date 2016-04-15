@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaoJiangong.com | 宝监工 | 赚钱宝云端监控大师</title>
+    <link rel="icon" href="../static/img/logo.png" type="image/png">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../static/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="../static/css/animate.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+        <div>
+            <div>
+                <h2 class="font-bold">BaoJiangong.com</h2>
+                <h2 class="font-bold"> </h2>
+            </div>
+            <p>欢迎开通VIP版本 支持网站服务器费用及流量开销。</p>
+            <p>VIP<font color=red>自动转盘</font>和<font color=red>开免费宝箱</font>的收益远大于VIP费用哦~ </p>
+            <p></p>
+            <p>定价：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;1账号VIP版&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5元/永久</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;2账号VIP版&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10元/永久</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;3账号VIP版&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12元/永久</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;5账号VIP版&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18元/永久</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;8账号VIP版&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25元/永久</p>
+<p>&nbsp;&nbsp; 10账号VIP版&nbsp;&nbsp;&nbsp;&nbsp;30元/永久</p>
+<p>&nbsp;&nbsp; 15账号VIP版&nbsp;&nbsp;&nbsp;&nbsp;40元/永久</p>
+<p>&nbsp;&nbsp;更多帐号咨询站长</p>
+            <p>请转账支付宝：<font color=red>477455266@163.com</font></p>
+            <p><img src='../static/img/2code.png' /></p>
+            <p>转账时备注：<font color=red>监工帐号 帐号数</font></p>
+            <p>转账后群里找<font color=red>帐号管理员2310893004</font>获得VIP帐号</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green'
+            });
+        });
+    </script>
+</body>
+</html>
