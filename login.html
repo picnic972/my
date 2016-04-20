@@ -1,8 +1,7 @@
+
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,23 +21,20 @@
 
     <style>
          @media (max-width: 640px) {
-
             .loginColumns{
                 padding-top: 0px;
             }
-
         }
     </style>
 </head>
-
-<body class="gray-bg">
-
-    <div class="loginColumns animated fadeInDown">
-        <div class="row">
-
-            <div class="col-md-6">
-                <p>
-                        欢迎来到 宝监工 
+<body>
+<div id="particles">
+    <div class="intro">
+        <div class="loginColumns animated fadeInDown">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        宝监工 baojiangong.com:888
                     </p>
 
                     <p>
@@ -55,25 +51,22 @@
 
                     <p>
                     <small></small>
-                </p>
-
-            </div>
-            <div class="col-md-6">
-                <div class="ibox-content">
-                    {% if err_msg %}
-                        <div class="alert alert-danger alert-dismissable">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                {{ err_msg }}
-                        </div>
-                    {% endif %}
-                    <form class="m-t" role="form" action="/user/login" method="post">
-                        <div class="form-group">
-                            <input type="text" name="username" class="form-control" placeholder="用户名" required="">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" name="password" class="form-control" placeholder="密码" required="">
-                        </div>
-                        <button type="submit" class="btn btn-primary block full-width m-b">登陆</button>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="btn full-width">
+                        
+                        <form role="form" action="/user/login" method="post">
+                            <div class="form-group">
+                                <input type="text" name="username" class="form-control" placeholder="用户名" required="">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control" placeholder="密码" required="">
+                            </div>
+                            <p>
+                            <small></small>
+                            </p>
+                            <button type="submit" class="btn btn-link block full-width m-b">登陆</button>
 <!--
                         <a href="#">
                             <small>Forgot password?</small>
@@ -82,7 +75,7 @@
                         <p class="text-muted text-center">
                             <small>没有账号?</small>
                         </p>
-                        <a class="btn btn-sm btn-white btn-block" href="/invitations">注册帐号</a>
+                        <a class="btn btn-sm btn-white btn-block" href="/register">注册一个吧</a>
                     </form>
                     <p class="m-t">
                         <small>Inspinia threme &copy; 2015</small>
