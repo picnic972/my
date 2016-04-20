@@ -352,7 +352,7 @@ def user_register():
     r_session.srem('public_invitation_codes', invitation_code)
 
     user = dict(username=username, password=hash_password(password), id=str(uuid.uuid1()),
-                active=True, is_admin=False, max_account_no=20,
+                active=True, is_admin=False, max_account_no=2,
                 created_time=datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     r_session.set('%s:%s' % ('user', username), json.dumps(user))
     r_session.set('%s:%s' % ('record', username), json.dumps(dict(diary=[])))
