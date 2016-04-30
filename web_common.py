@@ -68,7 +68,8 @@ def dashboard_data():
             'speed_stat': [],
             'yesterday_w_pdc': 0,
             'pdc': 0,
-            'balance': 0
+            'balance': 0,
+            'giftbox_pdc': 0
         }
         return Response(json.dumps(dict(today_data=empty_data)), mimetype='application/json')
 
@@ -282,10 +283,13 @@ def DoD_income_yuanjiangong():
         expected_income = str(int((yesterday_last_value / dod_income_value) * now_income_value))
 
     dod_income_value += int((yesterday_series['data'][now.hour]) / 60 * now.minute)
-    return Response(json.dumps(dict(series=[yesterday_series, today_series, yesterday_speed_series, today_speed_series],
-                                    data=dict(last_day_income=yesterday_last_value, dod_income_value=dod_income_value,
-                                              expected_income=expected_income)
-                                    )), mimetype='application/json')
+
+    user_key = '%s:%s' % ('user', user.get('username'))
+    user_info = json.loads(r_session.get(user_key).decode('utf-8'))
+    if user_info['is_show_speed_data'] == False:
+        return Response(json.dumps(dict(series=[yesterday_series, today_series, yesterday_speed_series, today_speed_series],data=dict(last_day_income=yesterday_last_value, dod_income_value=dod_income_value,expected_income=expected_income))), mimetype='application/json')
+    else:
+        return Response(json.dumps(dict(series=[yesterday_series, today_series],data=dict(last_day_income=yesterday_last_value, dod_income_value=dod_income_value,expected_income=expected_income))), mimetype='application/json')
 
 # 迅雷统计
 def DoD_income_xunlei():
