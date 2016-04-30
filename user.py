@@ -81,7 +81,7 @@ def public_invitation():
     return render_template('public_invitation.html', err_msg=err_msg, inv_code=inv_code, ip=HTTP_X_REAL_IP)
 
 
-@app.route('/yqm', methods=['POST'])
+@app.route('/ppppppp', methods=['POST'])
 def public_inv_code():
 
     public_key = 'invitation'
